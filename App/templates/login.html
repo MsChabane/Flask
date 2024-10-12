@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {%block title %} login page {% endblock %} {%block
+content %}
+
+<div class="container mt-auto align-items-center pt-5">
+  <form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group shadow-sm p-1">
+      <legend class="mb-4 text-center fs-2 fw-bold">Sign in</legend>
+      <div class="form-group my-3">
+        {{form.email.label(class="form-control-label mb-2")}}<br />
+        {{form.email(class="form-control form-control-lg ")}}
+      </div>
+      <div class="form-group my-3">
+        {{form.password.label(class="form-control-label mb-2")}}<br />
+        {{form.password(class="form-control form-control-lg")}}
+      </div>
+      <div class="form-group my-3 text-center">
+        {{form.submit(class="btn btn-outline-info mb-1")}}
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {%block title %} register page {% endblock %} {%block
+content %}
+
+<div class="container mt-auto align-items-center pt-5">
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group shadow-sm p-1">
+      <legend class=" mb-4 text-center fs-2 fw-bold">Sign Up</legend>
+      <div class="form-group my-3">
+        {{form.email.label(class="form-control-label mb-2")}}
+        {%if form.email.errors %} {{form.email(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.email.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.email(class="form-control form-control-lg")}} {% endif  %}
+      </div>
+      <div class="form-group my-3">
+        {{form.username.label(class="form-control-label mb-2")}}
+        {%if form.username.errors%}
+         {{form.username(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.username.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.username(class="form-control form-control-lg")}} {% endif %}
+      </div>
+      <div class="form-group my-3">
+        {{form.password.label(class="form-control-label mb-2")}}<br />
+        {%if form.password.errors%} {{form.password(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.password.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.password(class="form-control form-control-lg")}} {% endif %}
+      </div>
+      <div class="form-group my-3 text-center">
+        {{form.submit(class="btn btn-outline-info mb-1")}}
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+{% endblock %}

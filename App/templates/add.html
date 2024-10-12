@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block title %} product manager {% endblock %} {%
+block content %} 
+
+<div class="container mt-auto align-items-center">
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group shadow-sm p-1">
+      <legend class=" mb-4 text-center fs-2 fw-bold">Add Product</legend>
+      <div class="form-group my-3">
+        {{form.category.label(class="form-control-label mb-2")}}
+        {%if form.category.errors %} {{form.category(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.category.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.category(class="form-control form-control-lg")}} {% endif  %}
+      </div>
+      <div class="form-group my-3">
+        {{form.product_name.label(class="form-control-label mb-2")}}
+        {%if form.product_name.errors%}
+         {{form.product_name(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.product_name.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.product_name(class="form-control form-control-lg")}} {% endif %}
+      </div>
+      <div class="form-group my-3">
+        {{form.desc.label(class="form-control-label mb-2")}}<br />
+        {%if form.desc.errors%} {{form.desc(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.desc.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.desc(class="form-control form-control-lg")}} {% endif %}
+      </div>
+      <div class="form-group my-3">
+        {{form.quantity.label(class="form-control-label mb-2")}}<br />
+        {%if form.quantity.errors%} {{form.quantity(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.quantity.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.quantity(class="form-control form-control-lg")}} {% endif %}
+      </div>
+      <div class="form-group my-3">
+        {{form.price.label(class="form-control-label mb-2")}}<br />
+        {%if form.price.errors%} {{form.price(class="form-control
+        form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for err in form.price.errors%}
+          <span class=>{{err}}</span>
+          {% endfor%}
+        </div>
+        {% else %} {{form.price(class="form-control form-control-lg")}} {% endif %}
+      </div>
+      <div class="form-group my-3 text-center">
+        {{form.submit(class="btn btn-outline-info mb-1")}}
+      </div>
+    </fieldset>
+  </form>
+</div>{% endblock %}
